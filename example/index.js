@@ -13,7 +13,10 @@ app.get("/", function (_, res) {
                 });
     });
 
-app.use(Express.static("__dirname"));
+app.use(function (param, param$1, param$2) {
+      Express.static("__dirname", param, param$1, param$2);
+      return /* () */0;
+    });
 
 app.listen(3000);
 
