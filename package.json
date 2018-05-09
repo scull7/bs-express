@@ -9,6 +9,7 @@
   "devDependencies": {
     "@glennsl/bs-json": "^1.1.2",
     "bs-platform": "^2.1.0",
+    "lint-staged": "^7.1.0",
     "husky": "^0.15.0-rc.3"
   },
   "scripts": {
@@ -17,7 +18,14 @@
     "watch-run": "nodemon lib/js/example/",
     "watch": "bsb -make-world -w",
     "clean": "bsb -clean-world",
+    "precommit": "lint-staged",
     "test": "cd tests && ./test.sh"
+  },
+  "lint-staged": {
+    "*.{re,rei}": [
+      "refmt --in-place",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
