@@ -18,7 +18,6 @@
     "watch-run": "nodemon lib/js/example/",
     "watch": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "precommit": "lint-staged",
     "test": "cd tests && ./test.sh"
   },
   "lint-staged": {
@@ -44,5 +43,10 @@
     "url": "https://github.com/reasonml-community/bs-express/issues"
   },
   "homepage": "https://github.com/reasonml-community/bs-express#readme",
-  "rebel": {}
+  "rebel": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
